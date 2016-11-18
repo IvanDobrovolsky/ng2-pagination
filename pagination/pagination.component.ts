@@ -1,16 +1,16 @@
-import { Component, Input, Output,EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'pagination',
     templateUrl: 'pagination.component.html',
-    styleUrls: ['pagination.component.scss']
+    styleUrls: ['pagination.component.css']
 })
 export class PaginationComponent {
 
     @Input('count')  private pageCount: number;
     @Input('active') private activePageIndex: number;
 
-    @Output() pageChange = new EventEmitter <number> ();
+    @Output() public pageChange = new EventEmitter <number> ();
 
     private makeActive(newIndex: number): void {
         if (newIndex >= 1 && newIndex <= this.pageCount && newIndex != this.activePageIndex) {
