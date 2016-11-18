@@ -1,5 +1,5 @@
 <div class="pagination">
-    <button class="button prev" (click)="makeActive(activePageIndex - 1)" *ngIf="activePageIndex != 1">Prev</button>
+    <button class="pagination-button" (click)="makeActive(activePageIndex - 1)" *ngIf="activePageIndex != 1">Prev</button>
     <ul class="pagination-list">
         <li *ngFor="let pageIndex of pageIndexesList" [hidden]="!show(pageIndex).index && !show(pageIndex).ellipsis">
             <span class="pagination-index"
@@ -11,5 +11,5 @@
             <span class="pagination-ellipsis" *ngIf="!show(pageIndex).index && show(pageIndex).ellipsis">...</span>
         </li>
     </ul>
-    <button class="button next" (click)="makeActive(activePageIndex + 1)" *ngIf="activePageIndex != pageCount">Next</button>
+    <button class="pagination-button" (click)="makeActive(activePageIndex + 1)" *ngIf="activePageIndex != pageCount">Next</button>
 </div>
